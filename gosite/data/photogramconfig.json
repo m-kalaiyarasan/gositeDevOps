@@ -1,0 +1,9 @@
+{
+    "db_server" : "db",
+    "db_username": "root",
+    "password" : "example",
+    "dbname" : "photogram",
+    "base_path" : "/"
+
+
+}
