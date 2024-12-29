@@ -4,7 +4,8 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN apt update
 RUN apt upgrade -y
 RUN apt install -y apache2
-RUN apt install -y php libapache2-mod-php php-mysql php8.0-zip
+RUN apt install -y php libapache2-mod-php php-mysql php-zip nano
+RUN apt install -y php-zip nano
 RUN rm /var/www/html/index.html
 RUN apt install -y git
 COPY ./html /var/www/html
