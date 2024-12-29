@@ -23,6 +23,7 @@ chown www-data:www-data /etc/apache2/sites-available
 chown www-data:www-data /etc/apache2/sites-enabled/
 chmod 775 /etc/apache2/sites-available/
 dos2unix /var/www/html/htdocs/scripts/enableSite.sh
+chown -R www-data:www-data /var/www/html/site
 
 
 
