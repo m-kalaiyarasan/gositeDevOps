@@ -26,6 +26,9 @@ dos2unix /var/www/html/htdocs/scripts/enableSite.sh
 chown -R www-data:www-data /var/www/html/site
 chown -R www-data:www-data /var/lib/apache2/site/enabled_by_admin
 
+echo -e "www-data ALL=(ALL) NOPASSWD: /usr/sbin/a2ensite, /usr/sbin/service apache2 reload\nwww-data ALL=(ALL) NOPASSWD: /usr/sbin/a2ensite, /usr/sbin/a2dissite, /usr/sbin/service apache2 reload" | sudo tee -a /etc/sudoers > /dev/null
+
+
 # service apache2 reload
 
 
