@@ -1,0 +1,75 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;  
+  }
+
+/* .bdy{
+  background-image: url('login.jpg');
+} */
+body{
+  background: rgb(195, 197, 201);
+  background: linear-gradient(180deg, rgba(243,247,255,1) 0%, rgba(255,255,255,1) 100%);
+      background-repeat: no-repeat;
+      background-size:cover;
+}
+
+.form-signup {
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: auto;
+}
+
+.form-signup .checkbox {
+font-weight: 400;
+}
+
+.form-signup .form-floating:focus-within {
+z-index: 2;
+}
+.form-signup input[name="username"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 1;
+border-bottom-left-radius: 1;
+border-color: #ffffff;
+background-color: rgb(195, 197, 201);
+}
+.form-signup input[name="phone"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 1;
+border-bottom-left-radius: 1;
+border-top-left-radius: 1 ;
+border-color: #ffffff;
+border-top-right-radius: 1; 
+background-color: rgb(195, 197, 201);
+}
+
+.form-signup input[type="email"] {
+margin-bottom: -1px;
+border-bottom-right-radius: 1;
+border-bottom-left-radius: 1;
+border-top-left-radius: 1 ;
+border-top-right-radius: 1;
+border-color: #ffffff;
+/* opacity: 0.1; */
+background-color: rgb(195, 197, 201);
+}
+
+.form-signup input[type="password"] {
+margin-bottom: 10px;
+border-color: #ffffff;
+border-top-left-radius: 1;
+border-top-right-radius: 1;
+background-color: rgb(195, 197, 201);
+} 
+/* .form-signup{
+  background-image: url('login.jpg');
+} */
+#bttn{
+  background-color:#0d6efd;
+  color:white ;
+  
+}

@@ -26,7 +26,7 @@ dos2unix /var/www/html/htdocs/scripts/enableSite.sh
 chown -R www-data:www-data /var/www/html/site
 chown -R www-data:www-data /var/lib/apache2/site/enabled_by_admin
 
-
+# service apache2 reload
 
 
 /usr/sbin/apache2ctl -D FOREGROUND

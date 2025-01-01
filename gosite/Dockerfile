@@ -10,5 +10,6 @@ RUN apt install -y  php-zip nano
 RUN apt install -y  python3 dos2unix
 RUN rm -rf /var/www/html
 COPY ./data .
-RUN chmod +x /var/gosite/main.sh
+RUN chmod +x /var/gosite/main.sh && dos2unix /var/gosite/main.sh
+# RUN chmod +x /var/gosite/main.sh
 CMD /var/gosite/main.sh      
