@@ -1,0 +1,12 @@
+{
+    "server" : "mysql-kalai-blogingapp.h.aivencloud.com",
+    "port":"18299",
+    "username": "avnadmin",
+    "password" : "AVNS_mnJiF0eiNhJ1JwyR0il",
+    "dbname" : "defaultdb",
+    "ssl":"/var/www/html/htdocs/libs/includes/ca.pem",
+    "base_path" : "/",
+    "callback_url" : "https://dys.selfmade.one/gosite/htdocs/razorpay/paymentverify.php",
+    "mail_key" : "oewo xdfe xefn qxdw"
+
+}

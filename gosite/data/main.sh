@@ -13,6 +13,7 @@ sed -i "s/short_open_tag = .*/short_open_tag = On/" /etc/php/8.3/apache2/php.ini
 #
 cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/gosite.conf
 sed -i "s|DocumentRoot .*|DocumentRoot /var/www/html/htdocs|" /etc/apache2/sites-available/gosite.conf
+sed -i "s|#ServerName .*|ServerName gosite.in|" /etc/apache2/sites-available/gosite.conf
 
 a2ensite gosite.conf
 a2dissite 000-default.conf

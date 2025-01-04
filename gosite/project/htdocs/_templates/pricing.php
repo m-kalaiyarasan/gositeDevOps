@@ -25,14 +25,32 @@
                         </div>
                         <ul class="feature-list">
                             <p class="">This Plan For</p>
-                            <li><i class="bi bi-arrow-right-circle"></i>Portfolio Page</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>Landing Page</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>Lightweight websites</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Free SSL Certificate</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Custom Domain</li>
-                            <li><i class="bi bi-check-circle-fill"></i>24/7 Support</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Portfolio Page</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Landing Page</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Business websites</li>          
+                            <li><i class=" bi bi-arrow-right-circle"></i>Lightweight websites</li><br>
+                            <li><i class=" bi bi-check-circle-fill"></i>Free SSL Certificate</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Custom Domain</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>24/7 Support</li>
                         </ul>
-                        <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#paymentModalStarter" data-plan="starter">Get Started</button>
+                        <?
+                        if(Session::get('is_login')){
+                            ?>
+                            
+                            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#paymentModalStarter" data-plan="starter">Get Started</button>
+                            
+                         <?
+                        }else{
+
+                            ?>
+                            <button type="button" class="btn btn-primary w-100" onclick="window.location.href='login.php';">Get Started</button>    
+   
+                            <?
+   
+                           }
+                           ?>
+                        
+                        
                     </div>
                 </div>
             </div>
@@ -48,15 +66,30 @@
                         </div>
                         <ul class="feature-list">
                             <p class="">This Plan For</p>
-                            <li><i class="bi bi-arrow-right-circle"></i>Business websites</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>Blog websites</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>Medium-scale projects</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Database Support</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Free SSL Certificate</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Custom Domain</li>
-                            <li><i class="bi bi-check-circle-fill"></i>24/7 Support</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Business websites</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Blog websites</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Medium-scale projects</li><br>
+                            <li><i class=" bi bi-check-circle-fill"></i>Database Support</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Free SSL Certificate</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Custom Domain</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>24/7 Support</li>
                         </ul>
+                        <?
+                        if(Session::get('is_login')){
+                            ?>
                         <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#paymentModalProfessional" data-plan="professional">Get Started</button>
+                        
+                        <?
+                        }else{
+
+                         ?>
+                         <button type="button" class="btn btn-primary w-100" onclick="window.location.href='login.php';">Get Started</button>    
+
+                         <?
+
+                        }
+                        ?>
+
                     </div>
                 </div>
             </div>
@@ -72,16 +105,30 @@
                         </div>
                         <ul class="feature-list">
                             <p class="">This Plan For</p>
-                            <li><i class="bi bi-arrow-right-circle"></i>E-learning platforms</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>Online stores</li>
-                            <li><i class="bi bi-arrow-right-circle"></i>High-traffic websites</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Database Support</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Storage Support</li>
-                            <i class="bi bi-check-circle-fill"></i>Free SSL Certificate</li>
-                            <li><i class="bi bi-check-circle-fill"></i>Custom Domain</li>
-                            <li><i class="bi bi-check-circle-fill"></i>24/7 Support</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>E-learning platforms</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>Online stores</li>
+                            <li><i class=" bi bi-arrow-right-circle"></i>High-traffic websites</li><br>
+                            <li><i class=" bi bi-check-circle-fill"></i>Database Support</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Storage Support</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Free SSL Certificate</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>Custom Domain</li>
+                            <li><i class=" bi bi-check-circle-fill"></i>24/7 Support</li>
                         </ul>
+                        <?
+                        if(Session::get('is_login')){
+                            ?>
                         <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#paymentModalBusiness" data-plan="business">Get Started</button>
+                        
+                        <?
+                        }else{
+
+                         ?>
+                         <button type="button" class="btn btn-primary w-100" onclick="window.location.href='login.php';">Get Started</button>    
+
+                         <?
+
+                        }
+                        ?>
                     </div>
                 </div>
             </div>

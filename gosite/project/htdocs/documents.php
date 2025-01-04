@@ -680,36 +680,17 @@ blockquote {
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
-.go-back-btn {
-            background-color: #4CAF50; /* Green background */
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            border-radius: 8px; /* Rounded corners */
-            transition: background-color 0.3s ease;
-        }
-
-        .go-back-btn:hover {
-            background-color: #45a049; /* Darker green on hover */
-        }
-
-        .go-back-btn:focus {
-            outline: none; /* Remove focus outline */
-        }
 	
-</style>
+</style></head><body>
 
-<!-- add a back button in bootstrap -->
-<button class="go-back-btn" onclick="history.back()">Go Back</button>
+	
+<!-- add a back button with some style  -->
+<a href="javascript:history.back();" style="text-decoration:none; color: #106cbb; font-size: 1.5em; font-weight: 600;">← Back</a>
+ 
 
 
-</head><body><article id="16be34fa-c862-801f-8ad7-e5bb32a0f325" class="page sans"><header><h1 class="page-title">How to upload</h1><p class="page-description"></p></header><div class="page-body"><h2 id="16be34fa-c862-803e-9d1e-fb5c5ab3902e" class="">Zip upload Rules</h2><p id="16be34fa-c862-809c-9c83-e018722cf43a" class="">
+
+<article id="16be34fa-c862-801f-8ad7-e5bb32a0f325" class="page sans"><header><h1 class="page-title">How to upload</h1><p class="page-description"></p></header><div class="page-body"><h2 id="16be34fa-c862-803e-9d1e-fb5c5ab3902e" class="">Zip upload Rules</h2><p id="16be34fa-c862-809c-9c83-e018722cf43a" class="">
 </p><p id="16be34fa-c862-80ba-ba08-c3f9dac1d374" class="">The name must be smallcase</p><p id="16be34fa-c862-80d9-99ea-c17e5da9b648" class="">Your zip name and your folder inside the zip, must be the same<div class="indented"><ul id="16be34fa-c862-8061-91d6-ca142db5f351" class="bulleted-list"><li style="list-style-type:disc">Ex: <code>  demo.zip → demo → your/files</code></li></ul></div></p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="16be34fa-c862-8095-bda5-d5108deda85d" class="code"><code class="language-Bash">demo.zip
       └── demo
             ├── css
