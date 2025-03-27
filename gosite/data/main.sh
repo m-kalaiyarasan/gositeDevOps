@@ -17,7 +17,7 @@ sed -i "s/short_open_tag = .*/short_open_tag = On/" /etc/php/8.3/apache2/php.ini
 # sed -i "s|#ServerName .*|ServerName gosite.in|" /etc/apache2/sites-available/gosite.conf
 
 a2ensite gosite.conf
-a2dissite 000-default.conf
+a2ensite 000-default.conf
 # to increse the upload size
 sed -i 's/^upload_max_filesize = .*/upload_max_filesize = 100M/' /etc/php/8.3/apache2/php.ini
 sed -i 's/^post_max_size = .*/post_max_size = 100M/' /etc/php/8.3/apache2/php.ini
