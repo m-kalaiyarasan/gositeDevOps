@@ -29,6 +29,7 @@ services:
       # - ./gosite/project:/var/www/html
       - ./gosite/project/ApacheConfig/sites-available:/etc/apache2/sites-available
       - ./gosite/project/ApacheConfig/sites-enabled:/etc/apache2/sites-enabled  
+      - ./gosite/project/ApacheConfig/letsencrypt:/var/log/letsencrypt
       
 
 volumes:
