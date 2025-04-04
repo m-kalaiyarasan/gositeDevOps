@@ -12,6 +12,14 @@ RUN apt install -y sudo
 RUN apt install -y php-curl php-mbstring
 RUN rm -rf /var/www/html
 RUN apt install certbot python3-certbot-apache -y
+RUN apt-get install -y apache2 ssl-cert
+RUN apt install -y docker-compose
+RUN apt install -y docker.io
+RUN apt install -y python3.12-venv python3-setuptools
+RUN a2enmod ssl
+
+
+
 
 COPY ./data .
 RUN chmod +x /var/gosite/main.sh && dos2unix /var/gosite/main.sh
