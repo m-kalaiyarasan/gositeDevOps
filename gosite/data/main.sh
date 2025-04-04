@@ -40,6 +40,12 @@ echo -e "www-data ALL=(ALL) NOPASSWD: /usr/sbin/a2ensite, /usr/sbin/service apac
 chown -R www-data:www-data /var/www/html/ApacheConfig/letsencrypt
 chmod -R 755 /var/www/html/ApacheConfig/letsencrypt
 
+sudo usermod -aG docker www-data
+sudo chown root:docker /var/run/docker.sock
+sudo chmod 660 /var/run/docker.sock
+
+
+
 
 # service apache2 reload
 
