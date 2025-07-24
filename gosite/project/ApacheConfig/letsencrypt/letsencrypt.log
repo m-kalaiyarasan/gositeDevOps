@@ -1,0 +1,1125 @@
+2025-03-28 14:05:14,404:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:05:14,404:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:05:14,404:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:05:14,404:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:05:14,415:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:05:14,416:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+2025-03-28 14:05:14,417:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1657, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.config_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:05:14,419:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:05:59,923:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:05:59,923:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:05:59,923:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:05:59,923:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:05:59,934:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:05:59,934:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+2025-03-28 14:05:59,936:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1657, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.config_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:05:59,937:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:14,314:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:08:14,314:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:08:14,314:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:08:14,314:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:08:14,324:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:08:14,327:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:08:14,328:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:14,329:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:15,431:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:08:15,431:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:08:15,431:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:08:15,431:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:08:15,442:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:08:15,443:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:08:15,444:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:15,445:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:40,459:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:08:40,459:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:08:40,459:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:08:40,459:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:08:40,470:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:08:40,471:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:08:40,473:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:08:40,474:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:11,697:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:10:11,698:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:10:11,698:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:10:11,698:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:10:11,708:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:10:11,708:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:10:11,710:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:11,711:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:12,855:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:10:12,855:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:10:12,855:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:10:12,855:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:10:12,866:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:10:12,867:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:10:12,868:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:12,870:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:42,929:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:10:42,930:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:10:42,930:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'testkalaiyarasanme.gosite.in-le-ssl.conf']
+2025-03-28 14:10:42,930:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:10:42,940:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:10:42,941:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:10:42,943:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:10:42,944:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:11:29,306:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:11:29,306:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:11:29,306:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'testkalaiyarasanme.gosite.in-le-ssl.conf']
+2025-03-28 14:11:29,306:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:11:29,318:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:11:29,319:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+2025-03-28 14:11:29,320:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 260, in set_up_core_dir
+    make_or_verify_dir(directory, mode, strict)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 283, in make_or_verify_dir
+    filesystem.makedirs(directory, mode)
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 300, in makedirs
+    return os.makedirs(file_path, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen os>", line 225, in makedirs
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:11:29,322:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:16:51,703:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:16:51,703:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:16:51,703:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:16:51,703:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:16:51,713:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:16:51,715:DEBUG:certbot._internal.plugins.selection:Requested authenticator apache and installer apache
+2025-03-28 14:16:51,766:DEBUG:certbot_apache._internal.configurator:Apache version is 2.4.58
+2025-03-28 14:16:51,975:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * apache
+Description: Apache Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='apache', value='certbot_apache._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+Initialized: <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fda3c7ff4a0>
+Prep: True
+2025-03-28 14:16:51,976:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fda3c7ff4a0> and installer <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fda3c7ff4a0>
+2025-03-28 14:16:51,976:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator apache, Installer apache
+2025-03-28 14:16:52,175:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-03-28 14:16:52,177:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2025-03-28 14:17:13,229:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fda3b6eed80>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 517, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fda3b6eed80>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 647, in _send_request
+    response = self.session.request(method, url, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fda3b6eed80>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1443, in run
+    le_client = _init_le_client(config, authenticator, installer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 833, in _init_le_client
+    acc, acme = _determine_account(config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 741, in _determine_account
+    acc, acme = client.register(
+                ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 207, in register
+    acme = acme_from_config_key(config, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 72, in acme_from_config_key
+    directory = acme_client.ClientV2.get_directory(config.server, net)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 330, in get_directory
+    return messages.Directory.from_json(net.get(url).json())
+                                        ^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 705, in get
+    self._send_request('GET', url, **kwargs), content_type=content_type)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 669, in _send_request
+    raise ValueError(f"Requesting {host}{path}:{err_msg}")
+ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:17:13,233:ERROR:certbot._internal.log:An unexpected error occurred:
+2025-03-28 14:17:13,235:ERROR:certbot._internal.log:ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:17:35,356:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:17:35,356:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:17:35,356:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '-d', 'test.kalaiyarasan.me', '-v']
+2025-03-28 14:17:35,357:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:17:35,368:DEBUG:certbot._internal.log:Root logging level set at 20
+2025-03-28 14:17:35,369:DEBUG:certbot._internal.plugins.selection:Requested authenticator apache and installer apache
+2025-03-28 14:17:35,423:DEBUG:certbot_apache._internal.configurator:Apache version is 2.4.58
+2025-03-28 14:17:35,647:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * apache
+Description: Apache Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='apache', value='certbot_apache._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+Initialized: <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f4028ee3200>
+Prep: True
+2025-03-28 14:17:35,647:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f4028ee3200> and installer <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f4028ee3200>
+2025-03-28 14:17:35,648:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator apache, Installer apache
+2025-03-28 14:17:35,816:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-03-28 14:17:35,818:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2025-03-28 14:17:56,878:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7f4025cd8290>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 517, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4025cd8290>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 647, in _send_request
+    response = self.session.request(method, url, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f4025cd8290>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1443, in run
+    le_client = _init_le_client(config, authenticator, installer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 833, in _init_le_client
+    acc, acme = _determine_account(config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 741, in _determine_account
+    acc, acme = client.register(
+                ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 207, in register
+    acme = acme_from_config_key(config, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 72, in acme_from_config_key
+    directory = acme_client.ClientV2.get_directory(config.server, net)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 330, in get_directory
+    return messages.Directory.from_json(net.get(url).json())
+                                        ^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 705, in get
+    self._send_request('GET', url, **kwargs), content_type=content_type)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 669, in _send_request
+    raise ValueError(f"Requesting {host}{path}:{err_msg}")
+ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:17:56,882:ERROR:certbot._internal.log:An unexpected error occurred:
+2025-03-28 14:17:56,883:ERROR:certbot._internal.log:ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:25:51,690:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:25:51,690:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:25:51,690:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:25:51,690:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:25:51,710:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:25:51,711:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+2025-03-28 14:25:51,712:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:25:51,714:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:27:23,345:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:27:23,345:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:27:23,345:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:27:23,345:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:27:23,368:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:27:23,370:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+2025-03-28 14:27:23,372:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:27:23,374:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:30:52,224:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:30:52,224:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:30:52,224:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-28 14:30:52,224:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:30:52,234:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:30:52,235:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+2025-03-28 14:30:52,236:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1661, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.work_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-28 14:30:52,238:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/var/lib/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:20:56,891:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-29 15:20:56,891:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-29 15:20:56,891:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test3.kalaiyarasan.me-le-ssl.conf']
+2025-03-29 15:20:56,892:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-29 15:20:56,905:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-29 15:20:56,906:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+2025-03-29 15:20:56,909:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1657, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.config_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:20:56,912:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:21:02,357:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-29 15:21:02,357:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-29 15:21:02,357:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test2.kalaiyarasan.me-le-ssl.conf']
+2025-03-29 15:21:02,357:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-29 15:21:02,369:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-29 15:21:02,370:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+2025-03-29 15:21:02,371:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1657, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.config_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:21:02,373:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:26:35,349:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-29 15:26:35,349:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-29 15:26:35,349:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'test.kalaiyarasan.me-le-ssl.conf']
+2025-03-29 15:26:35,350:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-29 15:26:35,361:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-29 15:26:35,362:DEBUG:certbot.util:Exception was:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+2025-03-29 15:26:35,364:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 261, in set_up_core_dir
+    lock_dir_until_exit(directory)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1885, in main
+    make_or_verify_needed_dirs(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1657, in make_or_verify_needed_dirs
+    util.set_up_core_dir(config.config_dir, constants.CONFIG_DIRS_MODE, config.strict_permissions)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 264, in set_up_core_dir
+    raise errors.Error(PERM_ERR_FMT.format(error))
+certbot.errors.Error: The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.
+2025-03-29 15:26:35,365:ERROR:certbot._internal.log:The following error was encountered:
+[Errno 13] Permission denied: '/etc/letsencrypt/.certbot.lock'
+Either run as root, or set --config-dir, --work-dir, and --logs-dir to writeable paths.

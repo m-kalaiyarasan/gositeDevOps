@@ -1,0 +1,192 @@
+2025-03-28 14:23:58,731:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:23:58,731:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:23:58,731:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:23:58,732:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:23:58,754:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:23:58,764:DEBUG:certbot._internal.plugins.selection:Requested authenticator apache and installer apache
+2025-03-28 14:23:58,817:DEBUG:certbot_apache._internal.configurator:Apache version is 2.4.58
+2025-03-28 14:23:59,028:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * apache
+Description: Apache Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='apache', value='certbot_apache._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+Initialized: <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fcd92679d60>
+Prep: True
+2025-03-28 14:23:59,029:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fcd92679d60> and installer <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7fcd92679d60>
+2025-03-28 14:23:59,029:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator apache, Installer apache
+2025-03-28 14:23:59,314:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-03-28 14:23:59,316:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2025-03-28 14:24:20,440:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 203, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 85, in create_connection
+    raise err
+  File "/usr/lib/python3/dist-packages/urllib3/util/connection.py", line 73, in create_connection
+    sock.connect(sa)
+OSError: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 791, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connection.py", line 218, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPSConnection object at 0x7fcd8e73c290>: Failed to establish a new connection: [Errno 101] Network is unreachable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/connectionpool.py", line 845, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/urllib3/util/retry.py", line 517, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fcd8e73c290>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 647, in _send_request
+    response = self.session.request(method, url, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='acme-v02.api.letsencrypt.org', port=443): Max retries exceeded with url: /directory (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fcd8e73c290>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1443, in run
+    le_client = _init_le_client(config, authenticator, installer)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 833, in _init_le_client
+    acc, acme = _determine_account(config)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 741, in _determine_account
+    acc, acme = client.register(
+                ^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 207, in register
+    acme = acme_from_config_key(config, key)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/client.py", line 72, in acme_from_config_key
+    directory = acme_client.ClientV2.get_directory(config.server, net)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 330, in get_directory
+    return messages.Directory.from_json(net.get(url).json())
+                                        ^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 705, in get
+    self._send_request('GET', url, **kwargs), content_type=content_type)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/acme/client.py", line 669, in _send_request
+    raise ValueError(f"Requesting {host}{path}:{err_msg}")
+ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:24:20,443:ERROR:certbot._internal.log:An unexpected error occurred:
+2025-03-28 14:24:20,445:ERROR:certbot._internal.log:ValueError: Requesting acme-v02.api.letsencrypt.org/directory: Network is unreachable
+2025-03-28 14:25:17,119:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:25:17,119:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:25:17,119:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:25:17,120:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:25:17,143:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:25:17,169:DEBUG:certbot._internal.plugins.selection:Requested authenticator apache and installer apache
+2025-03-28 14:25:17,256:DEBUG:certbot_apache._internal.configurator:Apache version is 2.4.58
+2025-03-28 14:25:17,641:DEBUG:certbot._internal.plugins.selection:Single candidate plugin: * apache
+Description: Apache Web Server plugin
+Interfaces: Authenticator, Installer, Plugin
+Entry point: EntryPoint(name='apache', value='certbot_apache._internal.entrypoint:ENTRYPOINT', group='certbot.plugins')
+Initialized: <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f40e5d00c20>
+Prep: True
+2025-03-28 14:25:17,642:DEBUG:certbot._internal.plugins.selection:Selected authenticator <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f40e5d00c20> and installer <certbot_apache._internal.override_debian.DebianConfigurator object at 0x7f40e5d00c20>
+2025-03-28 14:25:17,643:INFO:certbot._internal.plugins.selection:Plugins selected: Authenticator apache, Installer apache
+2025-03-28 14:25:17,916:DEBUG:acme.client:Sending GET request to https://acme-v02.api.letsencrypt.org/directory.
+2025-03-28 14:25:17,918:DEBUG:urllib3.connectionpool:Starting new HTTPS connection (1): acme-v02.api.letsencrypt.org:443
+2025-03-28 14:25:32,389:ERROR:certbot._internal.log:Exiting due to user request.
+2025-03-28 14:27:49,174:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-03-28 14:27:49,175:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-03-28 14:27:49,175:DEBUG:certbot._internal.main:Arguments: ['--apache', '--non-interactive', '--agree-tos', '--email', 'gosite.site@gmail.com', '--redirect', '--keep-until-expiring', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs', '-d', 'test.kalaiyarasan.me']
+2025-03-28 14:27:49,175:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-03-28 14:27:49,186:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-03-28 14:27:49,194:DEBUG:certbot._internal.plugins.selection:Requested authenticator apache and installer apache
+2025-03-28 14:27:49,248:DEBUG:certbot_apache._internal.configurator:Apache version is 2.4.58
+2025-03-28 14:27:49,470:DEBUG:certbot_apache._internal.configurator:Encountered error:
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot_apache/_internal/configurator.py", line 402, in prepare
+    util.lock_dir_until_exit(self.options.server_root)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/apache2/.certbot.lock'
+2025-03-28 14:27:49,482:DEBUG:certbot._internal.plugins.disco:Other error:(PluginEntryPoint#apache): Unable to create a lock file in /etc/apache2. Are you running Certbot with sufficient privileges to modify your Apache configuration?
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot_apache/_internal/configurator.py", line 402, in prepare
+    util.lock_dir_until_exit(self.options.server_root)
+  File "/usr/lib/python3/dist-packages/certbot/util.py", line 235, in lock_dir_until_exit
+    _LOCKS[dir_path] = lock.lock_dir(dir_path)
+                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 259, in lock_dir
+    return LockFile(os.path.join(dir_path, '.certbot.lock'))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 45, in __init__
+    self.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 60, in acquire
+    self._lock_mechanism.acquire()
+  File "/usr/lib/python3/dist-packages/certbot/_internal/lock.py", line 110, in acquire
+    fd = filesystem.open(self._path, os.O_CREAT | os.O_WRONLY, 0o600)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/compat/filesystem.py", line 230, in open
+    return os.open(file_path, flags, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: '/etc/apache2/.certbot.lock'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/certbot/_internal/plugins/disco.py", line 112, in prepare
+    self._initialized.prepare()
+  File "/usr/lib/python3/dist-packages/certbot_apache/_internal/configurator.py", line 405, in prepare
+    raise errors.PluginError(
+certbot.errors.PluginError: Unable to create a lock file in /etc/apache2. Are you running Certbot with sufficient privileges to modify your Apache configuration?
+2025-03-28 14:27:49,484:DEBUG:certbot._internal.plugins.selection:No candidate plugin
