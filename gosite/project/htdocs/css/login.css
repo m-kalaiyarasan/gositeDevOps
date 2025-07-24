@@ -1,0 +1,47 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;  
+  }
+
+body{
+  color: black;
+  background: rgb(243,247,255);
+background: linear-gradient(180deg, rgba(243,247,255,1) 0%, rgba(255,255,255,1) 100%);
+        background-repeat: no-repeat;
+        background-size:cover;
+  }
+
+
+.form-signin {
+width: 100%;
+max-width: 330px;
+padding: 15px;
+margin: auto;
+}
+
+.form-signin .checkbox {
+font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+z-index: 2;
+}
+
+.form-signin input[type="name"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-color: #ffffff;
+  background-color: rgb(195, 197, 201);
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 1;
+  border-bottom-left-radius: 1;
+  border-color: #ffffff;
+  background-color: rgb(195, 197, 201)
+}
