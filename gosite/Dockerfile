@@ -18,6 +18,8 @@ RUN apt install -y docker-compose
 
 RUN apt install -y python3.12-venv python3-setuptools
 RUN a2enmod ssl
+RUN a2enmod proxy
+RUN a2enmod proxy_http
 
 
 
