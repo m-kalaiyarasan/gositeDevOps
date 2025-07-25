@@ -4,9 +4,9 @@
     echo "<pre>";
     print_r($_POST);
     echo "</pre>";
-    $domain= $_POST['domain'];
+    $domain= $_POST['domain'].".gosite.in";
 
-
+try{
 if (UserSession::authorize($_SESSION['session_token'])) {
 
 
@@ -32,7 +32,7 @@ print_r($create);
 echo"<pre>";
 // print($port+1);
 
-$wp->ApacheConfig($domain.".gosite.in",$port);
+$wp->ApacheConfig($domain,$port);
 
 $plan_id = $_POST['plan_id'];
 $plan_name = $_POST['plan_name'];
@@ -47,3 +47,18 @@ Database::getConnection();
                 // echo "Failed to set domain details!\n<br>";
             }
 }
+
+shell_exec("service apache2 reload");
+} 
+
+
+catch (Exception $e) {
+        echo $e->getMessage();
+        $errorMessage = urlencode($e->getMessage());
+        header("Location: /dashboard.php?error=$errorMessage");
+        exit();
+    }
+
+   header("Location: dashboard.php?manage");
+    $_SESSION['message'] = "Your site is successfully hosted on " . $domain . ".gosite.in";
+    exit;
