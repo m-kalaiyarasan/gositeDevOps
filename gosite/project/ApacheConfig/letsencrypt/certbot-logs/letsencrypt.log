@@ -190,3 +190,183 @@ Traceback (most recent call last):
     raise errors.PluginError(
 certbot.errors.PluginError: Unable to create a lock file in /etc/apache2. Are you running Certbot with sufficient privileges to modify your Apache configuration?
 2025-03-28 14:27:49,484:DEBUG:certbot._internal.plugins.selection:No candidate plugin
+2025-07-25 11:39:15,837:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-07-25 11:39:15,837:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-07-25 11:39:15,837:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'testeeer.gosite.in', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs']
+2025-07-25 11:39:15,837:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-07-25 11:39:15,849:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-07-25 11:39:15,858:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2025-07-25 11:39:15,859:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * testeeer.gosite.in
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2025-07-25 11:39:15,859:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1327, in delete
+    cert_manager.delete(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/cert_manager.py", line 115, in delete
+    storage.delete_files(config, certname)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 361, in delete_files
+    renewal_filename = renewal_file_for_certname(config, certname)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 70, in renewal_file_for_certname
+    raise errors.CertStorageError(
+certbot.errors.CertStorageError: No certificate found with name testeeer.gosite.in (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/testeeer.gosite.in.conf).
+2025-07-25 11:39:15,863:ERROR:certbot._internal.log:No certificate found with name testeeer.gosite.in (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/testeeer.gosite.in.conf).
+2025-07-25 11:43:06,501:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-07-25 11:43:06,501:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-07-25 11:43:06,501:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'tester.gosite.in', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs']
+2025-07-25 11:43:06,501:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-07-25 11:43:06,511:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-07-25 11:43:06,518:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2025-07-25 11:43:06,519:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * tester.gosite.in
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2025-07-25 11:43:06,519:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1327, in delete
+    cert_manager.delete(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/cert_manager.py", line 115, in delete
+    storage.delete_files(config, certname)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 361, in delete_files
+    renewal_filename = renewal_file_for_certname(config, certname)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 70, in renewal_file_for_certname
+    raise errors.CertStorageError(
+certbot.errors.CertStorageError: No certificate found with name tester.gosite.in (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/tester.gosite.in.conf).
+2025-07-25 11:43:06,521:ERROR:certbot._internal.log:No certificate found with name tester.gosite.in (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/tester.gosite.in.conf).
+2025-07-25 13:37:16,269:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-07-25 13:37:16,269:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-07-25 13:37:16,269:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'wpktest', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs']
+2025-07-25 13:37:16,270:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-07-25 13:37:16,282:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-07-25 13:37:16,289:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2025-07-25 13:37:16,289:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * wpktest
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2025-07-25 13:37:16,290:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1327, in delete
+    cert_manager.delete(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/cert_manager.py", line 115, in delete
+    storage.delete_files(config, certname)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 361, in delete_files
+    renewal_filename = renewal_file_for_certname(config, certname)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 70, in renewal_file_for_certname
+    raise errors.CertStorageError(
+certbot.errors.CertStorageError: No certificate found with name wpktest (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/wpktest.conf).
+2025-07-25 13:37:16,294:ERROR:certbot._internal.log:No certificate found with name wpktest (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/wpktest.conf).
+2025-07-25 13:42:36,476:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-07-25 13:42:36,476:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-07-25 13:42:36,476:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'gameeqwe', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs']
+2025-07-25 13:42:36,476:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-07-25 13:42:36,488:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-07-25 13:42:36,496:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2025-07-25 13:42:36,496:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * gameeqwe
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2025-07-25 13:42:36,497:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1327, in delete
+    cert_manager.delete(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/cert_manager.py", line 115, in delete
+    storage.delete_files(config, certname)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 361, in delete_files
+    renewal_filename = renewal_file_for_certname(config, certname)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 70, in renewal_file_for_certname
+    raise errors.CertStorageError(
+certbot.errors.CertStorageError: No certificate found with name gameeqwe (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/gameeqwe.conf).
+2025-07-25 13:42:36,499:ERROR:certbot._internal.log:No certificate found with name gameeqwe (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/gameeqwe.conf).
+2025-07-25 14:02:22,716:DEBUG:certbot._internal.main:certbot version: 2.9.0
+2025-07-25 14:02:22,717:DEBUG:certbot._internal.main:Location of certbot entry point: /usr/bin/certbot
+2025-07-25 14:02:22,717:DEBUG:certbot._internal.main:Arguments: ['--cert-name', 'teskalai', '--config-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-config', '--work-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-work', '--logs-dir', '/var/www/html/ApacheConfig/letsencrypt/certbot-logs']
+2025-07-25 14:02:22,717:DEBUG:certbot._internal.main:Discovered plugins: PluginsRegistry(PluginEntryPoint#apache,PluginEntryPoint#manual,PluginEntryPoint#null,PluginEntryPoint#standalone,PluginEntryPoint#webroot)
+2025-07-25 14:02:22,752:DEBUG:certbot._internal.log:Root logging level set at 30
+2025-07-25 14:02:22,783:WARNING:certbot._internal.display.obj:Skipped user interaction because Certbot doesn't appear to be running in a terminal. You should probably include --non-interactive or --force-interactive on the command line.
+2025-07-25 14:02:22,785:DEBUG:certbot._internal.display.obj:Falling back to default True for the prompt:
+The following certificate(s) are selected for deletion:
+
+  * teskalai
+
+WARNING: Before continuing, ensure that the listed certificates are not being used by any installed server software (e.g. Apache, nginx, mail servers). Deleting a certificate that is still being used will cause the server software to stop working. See https://certbot.org/deleting-certs for information on deleting certificates safely.
+
+Are you sure you want to delete the above certificate(s)?
+2025-07-25 14:02:22,787:DEBUG:certbot._internal.log:Exiting abnormally:
+Traceback (most recent call last):
+  File "/usr/bin/certbot", line 33, in <module>
+    sys.exit(load_entry_point('certbot==2.9.0', 'console_scripts', 'certbot')())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/main.py", line 19, in main
+    return internal_main.main(cli_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1894, in main
+    return config.func(config, plugins)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/main.py", line 1327, in delete
+    cert_manager.delete(config)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/cert_manager.py", line 115, in delete
+    storage.delete_files(config, certname)
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 361, in delete_files
+    renewal_filename = renewal_file_for_certname(config, certname)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/certbot/_internal/storage.py", line 70, in renewal_file_for_certname
+    raise errors.CertStorageError(
+certbot.errors.CertStorageError: No certificate found with name teskalai (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/teskalai.conf).
+2025-07-25 14:02:22,791:ERROR:certbot._internal.log:No certificate found with name teskalai (expected /var/www/html/ApacheConfig/letsencrypt/certbot-config/renewal/teskalai.conf).

@@ -45,7 +45,10 @@ chmod -R 755 /var/www/html/ApacheConfig/letsencrypt
 sudo usermod -aG docker www-data
 sudo chown root:docker /var/run/docker.sock
 sudo chmod 660 /var/run/docker.sock
+sudo a2enmod proxy
+sudo a2enmod proxy_http
 
+sed -i '/"credsStore": *"docker-credential-dev-containers[^"]*",*/d' "$HOME/.docker/config.json"
 
 
 

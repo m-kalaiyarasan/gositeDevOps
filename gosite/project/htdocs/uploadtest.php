@@ -56,6 +56,7 @@ function isValidDomain($domain) {
     return preg_match($pattern, $domain) === 1;
 }
 
+
 if(($_POST['domainType'] == 'custom')){
 
     // $serverIp = "192.168.1.100";

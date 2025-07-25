@@ -22,6 +22,7 @@ RUN a2enmod ssl
 
 
 
+
 COPY ./data .
 RUN chmod +x /var/gosite/main.sh && dos2unix /var/gosite/main.sh
 

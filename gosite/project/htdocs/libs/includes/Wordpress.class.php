@@ -60,6 +60,8 @@ EOL;
         // Start the Docker containers
         $output = shell_exec(" sudo docker-compose -f $base_dir/docker-compose.yml up -d");
 
+        print_r($output);
+        print($output);
         return [
             "status" => "success",
             "message" => "WordPress for $user_id is now running on port $port",
@@ -110,7 +112,7 @@ EOL;
     }
     public function setDetails($user_id,$port,$base_dir,$docker_compose_path) {
         $conn = Database::getConnection();
-        $sql = "INSERT INTO `config` (`user_id`, `port`, `base_dir`, `docker_compose_path`) VALUES ('$user_id', '$port', '$base_dir', '$docker_compose_path')";
+        $sql = "INSERT INTO `wp_config` (`user_id`, `port`, `base_dir`, `docker_compose_path`) VALUES ('$user_id', '$port', '$base_dir', '$docker_compose_path')";
         if ($conn->query($sql) === TRUE) {
             return true;
         } else {
@@ -118,6 +120,27 @@ EOL;
         }
 
         
+    }
+
+    public function ApacheConfig($domain,$port){
+          $ApacheConfigTemp = <<<EOL
+              <VirtualHost *:80>
+                  ServerName $domain
+
+                  ProxyPreserveHost On
+                  ProxyPass / http://172.18.0.1:$port/
+                  ProxyPassReverse / http://172.18.0.1:$port/
+
+                  ErrorLog ${APACHE_LOG_DIR}/wordpress_error.log
+                  CustomLog ${APACHE_LOG_DIR}/wordpress_access.log combined
+              </VirtualHost>
+          EOL;
+
+         $configPath = "/etc/apache2/sites-available/$domain.conf";
+        file_put_contents($configPath, $ApacheConfigTemp);
+        shell_exec("a2ensite $domain.conf");
+        shell_exec("service apache2 reload");
+
     }
 
 // Get user ID and port from request (POST method recommended)

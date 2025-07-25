@@ -135,7 +135,7 @@ class Upload{
         }
     }
 
-    public static function isValidGitLink($gitLink) {
+    public function isValidGitLink($gitLink) {
         // Regex for validating Git URL
         $regex = '/^(https?:\/\/|git@)[\w.-]+(:[\d]+)?\/[\w.-]+\/[\w.-]+(\.git)?$/';
     
