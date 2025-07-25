@@ -5,10 +5,10 @@
     <!-- <center> <img class="mb-4" src="_templates/dys.png" alt="" width="80" height="70"></center> -->
    
     <center>
-    <h1 class="h3 mb-3 color-1">Login in</h1>
+    <h1 class="h3 mb-3 color-1">Login</h1>
     </center>
 
-    <div class="form-floating">
+    <div class="form-floating"> 
       <input name="user" type="name" class="form-control" id="floatingInput" placeholder="name@example.com" required>
       <label for="floatingInput">Username or Email</label>
     </div>
@@ -24,7 +24,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button class="w-100 btn btn-lg btn-primary hvr-wobble-skew" type="submit">Logn in</button>
+    <button class="w-100 btn btn-lg btn-primary hvr-wobble-skew" type="submit">Login</button>
   </form>
   <div class="mt-5 ">
     <h6>Don't have an account ?   <a class="btn btn-primary ms-2" href="signup.php">Signup</a></h6>
@@ -48,6 +48,3 @@
       document.getElementById('fingerprint').value = visitorId;
     });
 </script>
-
-
-

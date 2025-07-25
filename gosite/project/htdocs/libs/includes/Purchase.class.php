@@ -315,6 +315,42 @@ class Purchase{
             return false; // Treat as 'pending' if an error occurs
         }
     }
+
+    public function iswordpress($id){
+            try {
+            $conn = Database::getConnection();
+            
+            if ($conn->connect_error) {
+                throw new Exception("Connection failed: " . $conn->connect_error);
+            }
+    
+            // Fetch payment status for the given ID
+            $sql = "SELECT git_repo FROM purchase WHERE id = ?";
+            $stmt = $conn->prepare($sql);
+            if (!$stmt) {
+                throw new Exception("Prepare statement failed: " . $conn->error);
+            }
+            $stmt->bind_param("s", $id);
+            if (!$stmt->execute()) {
+                throw new Exception("Execution failed: " . $stmt->error);
+            }
+    
+            $stmt->bind_result($status);
+            if (!$stmt->fetch()) {
+                throw new Exception("No record found for ID: " . $id);
+            }
+    
+            $stmt->close();
+            
+            // print($payment_status);
+            // Check if payment status is 'paid' or 'pending'
+            return $status;
+    
+        } catch (Exception $e) {
+            error_log("Error in isPaid: " . $e->getMessage()); // Logs the error
+            return false; // Treat as 'pending' if an error occurs
+        }
+    }
     
 
 }

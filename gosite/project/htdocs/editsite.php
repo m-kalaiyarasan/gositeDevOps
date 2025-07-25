@@ -1,8 +1,10 @@
 <?php
 include 'libs/load.php';
 
-
+echo "<pre>";
 print_r($_POST);
+
+echo "<pre>";
 
 
 $id = $_POST['id'];
@@ -78,19 +80,27 @@ if(isset($_POST['action']) && $_POST['action'] == 'save'){
 
 if(isset($_POST['action']) && $_POST['action'] == 'delete'){
     $purchase = new Purchase(Session::get('session_user'));
-    $result = $purchase->deletedetails($id);
-    if($result){
-        Conf::disableSite($name);
-        // Conf::deletesslConfig($name);
-        Conf::reloadApache();
-        conf::deleteFolder($name);
-        conf::delconfssl($name);
-        Conf::deleteapacheConfig($name);
+    $check = $purchase->iswordpress($id);
+    // print($check);
+    if(str_contains($check, "kalai_")){
+        print("yes wp");
 
-        header('Location: dashboard.php?manage');
-        exit;
     }
-    else{
-        echo "Error";
-    }
+    // $result = $purchase->deletedetails($id);
+    // if($result){
+    //     Conf::disableSite($name);
+    //     // Conf::deletesslConfig($name);
+    //     Conf::reloadApache();
+    //     conf::deleteFolder($name);
+    //     conf::delconfssl($name);
+    //     Conf::deleteapacheConfig($name);
+
+    //     header('Location: dashboard.php?manage');
+    //     exit;
+    // }
+    // else{
+    //     echo "Error";
+    // }
 }
+
+print("\nend");

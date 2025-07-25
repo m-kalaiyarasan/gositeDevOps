@@ -143,6 +143,11 @@ EOL;
 
     }
 
+    public function RemoveContainer($name){
+            return shell_exec("docker kill $name");
+            
+    }
+
 // Get user ID and port from request (POST method recommended)
 
 
