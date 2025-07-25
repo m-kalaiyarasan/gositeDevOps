@@ -32,7 +32,7 @@ print_r($create);
 echo"<pre>";
 // print($port+1);
 
-$wp->ApacheConfig($domain,$port);
+$wp->ApacheConfig($domain.".gosite.in",$port);
 
 $plan_id = $_POST['plan_id'];
 $plan_name = $_POST['plan_name'];
